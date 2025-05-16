@@ -1,5 +1,5 @@
-// imports
-  import "./globals.css";
+/* imports
+*/ 
   import type { Metadata } from "next";
 
   // fonts

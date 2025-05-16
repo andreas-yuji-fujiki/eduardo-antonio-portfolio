@@ -1,0 +1,21 @@
+/* src/styles/global.scss */
+
+body {
+  transition: background-color 0.3s ease;
+}
+
+body.light {
+  background: #fff;
+
+  h1, h2, h3, h4, h5, h6, p, a, span, li {
+    color: #000;
+  }
+}
+
+body.dark {
+  background: #000;
+
+  h1, h2, h3, h4, h5, h6, p, a, span, li {
+    color: #fff;
+  }
+}

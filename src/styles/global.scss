@@ -28,21 +28,19 @@ html {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background: linear-gradient(180deg, #000 0%, #000 41.44%, #000 100%);
 
   background: var(--bg-color);
   color: var(--text-color);
 
-  display: flex;
-  max-height: 1080px;
-  padding: 0px 150px;
-  flex-direction: column;
-  align-items: center;
-  gap: 100px;
-  align-self: stretch;
+  max-width: 80%;
+  margin: 0 auto;
+
+  /* tablets / mobile
+  */
+  @media screen and ( max-width: 920px ) {
+    max-width: 90%;
+  }
 }
 
 /* lists

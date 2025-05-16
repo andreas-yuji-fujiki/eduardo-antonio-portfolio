@@ -1,9 +1,47 @@
-.heroWrapper {
+.heroSectionWrapper {
+    z-index: 2;
+    height: 60dvh;
+  
     display: flex;
-    max-height: 1080px;
-    padding: 0px 150px;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 100px;
-    align-self: stretch;
-}
+  
+    .shape {
+      position: absolute;
+      z-index: 1;
+  
+      top: 50%; // centraliza verticalmente
+      transform: translateY(-50%); // centraliza com precisão
+  
+      width: clamp(80px, 22vw, 500px); // responsivo: mínimo 80px, máximo 220px
+      height: auto;
+      pointer-events: none; // previne que interfira no mouse
+      user-select: none;
+    }
+  
+    .shape1 {
+      left: 0;
+    }
+  
+    .shape2 {
+      right: 0;
+    }
+  
+    .heroWrapper {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+  
+      p {
+        color: #FFF;
+        text-align: center;
+        font-family: "Roboto Serif";
+        font-size: 28px;
+        font-weight: 400;
+      }
+    }
+  }  

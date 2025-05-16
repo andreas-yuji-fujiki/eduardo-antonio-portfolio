@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 
 // Icons
+import { HiMenuAlt3 } from "react-icons/hi";
 import { FiMoon } from "react-icons/fi";
 import { FiSun } from "react-icons/fi";
 
@@ -22,7 +23,7 @@ export function AppHeader() {
   }, []);
 
   return (
-    <header className={styles.appHeaderWrapper} id="home">
+    <header className={styles.appHeaderWrapper}>
       {/* Title */}
       <h2>
         <a href="#home">edu.&lt;/&gt;</a>
@@ -30,6 +31,9 @@ export function AppHeader() {
 
       {/* Nav */}
       <div className={styles.buttons}>
+        
+        {/* desktop / tablet nav
+        */}
         <nav>
           <a href="#home">
             <span>Home</span>
@@ -57,10 +61,20 @@ export function AppHeader() {
           }}
         >
           {themeBtnStyle === "dark" ? (
-            <FiSun className={styles.icon} size="28px" color="#a8c7fa" />
+            <FiSun className={styles.icon} size="28px" color="#fff" />
           ) : (
-            <FiMoon className={styles.icon} size="28px" color="#c35298" />
+            <FiMoon className={styles.icon} size="28px" color="#000" />
           )}
+        </button>
+
+        {/* mobile nav - burger icon
+        */}
+        <button className={styles.mobileHamburguerBtn}>
+          <HiMenuAlt3
+            className={styles.icon}
+            color="#fff"
+            size="32px"
+          />
         </button>
       </div>
     </header>

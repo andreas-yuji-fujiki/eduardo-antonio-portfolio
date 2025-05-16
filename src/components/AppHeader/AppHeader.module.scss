@@ -20,12 +20,39 @@
   align-items: center;
   gap: 25px;
 
+  @media screen and ( max-width: 920px ) {
+    gap: 20px;
+  }
+
+  .mobileHamburguerBtn {
+    display: none;
+    cursor: pointer;
+
+    &:hover {
+      .icon {
+        opacity: 0.7;
+      }
+    }
+
+    @media screen and ( max-width: 770px ) {
+      display: flex;
+    }
+  }
+
   nav {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     flex: 1;
     gap: 59px;
+
+    @media screen and ( max-width: 920px ) {
+      gap: 32px;
+    }
+
+    @media screen and ( max-width: 770px ) {
+      display: none;
+    }
 
     * {
       text-align: center;

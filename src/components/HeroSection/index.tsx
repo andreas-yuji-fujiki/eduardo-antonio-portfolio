@@ -27,7 +27,7 @@ export function HeroSection() {
           alt="Presentation" 
         />
         
-        <p style={{ color: isDarkMode ? 'white' : 'black' }}>
+        <p style={ { color: 'var(--text-color)' } }>
           An 18 years old brazilian ongoing 
           <br /> backend software engineer!
         </p>

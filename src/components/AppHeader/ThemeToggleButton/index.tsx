@@ -1,31 +1,19 @@
-// react
-import { useEffect, useState } from "react";
-
 // icons
 import { FiMoon, FiSun } from "react-icons/fi";
+
+// theme zustand store & hook to apply the theme
+import { useThemeStore } from "@/stores/useThemeStore";
+import { useApplyUserTheme } from "@/hooks/useApplyUserTheme";
 
 // styles
 import styles from "./ThemeToggleButton.module.scss";
 
+// theme toggle button component
 export function ThemeToggleButton() {
-  // theme state
-  const [theme, setTheme] = useState<"dark" | "light">("light");
+  const theme = useThemeStore((state) => state.theme);
+  const toggleTheme = useThemeStore((state) => state.toggleTheme);
 
-  // apply theme
-  function applyTheme(theme: "dark" | "light") {
-    document.body.classList.remove("dark", "light");
-    document.body.classList.add(theme);
-  }
-
-  // apply theme observer
-  useEffect(() => {
-    applyTheme(theme);
-  }, [theme]);
-
-  // toggle theme
-  function toggleTheme() {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
-  }
+  useApplyUserTheme(); // applying the class on document body
 
   return (
     <button className={styles.themeBtn} onClick={toggleTheme}>
@@ -36,4 +24,4 @@ export function ThemeToggleButton() {
       )}
     </button>
   );
-};
+}

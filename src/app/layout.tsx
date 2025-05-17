@@ -28,7 +28,7 @@ const robotoSerif = Roboto_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Eduardo Antonio's Portfolio!",
+  title: "Eduardo Antonio's Portfolio",
   description: "Used to show who i'm and what can i do!",
 };
 

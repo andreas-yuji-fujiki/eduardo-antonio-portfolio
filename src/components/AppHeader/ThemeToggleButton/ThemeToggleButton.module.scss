@@ -15,7 +15,7 @@
       .icon *{
         
         transform: scale(0.98);
-        color: #ecb243;
+        color: var(--theme-toggle-button-hover-color);
       }
     }
   }

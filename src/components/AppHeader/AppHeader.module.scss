@@ -18,11 +18,17 @@
     max-width: 80%;
     margin: 0 auto;
 
+    /* responsivity */
+    @media screen and (max-width: 899px) {
+      max-width: 95%; 
+    }
+
     h2 {
       font-family: "Roboto Serif", serif;
       font-size: 28px;
       font-weight: 700;
     }
+
     .buttons {
       display: flex;
       align-items: center;

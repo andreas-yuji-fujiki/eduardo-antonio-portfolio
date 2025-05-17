@@ -1,0 +1,18 @@
+.mobileHamburguerBtn {
+    display: none;
+    cursor: pointer;
+
+    .icon {
+        transition: color 0.2s ease;
+    }
+
+    &:hover {
+      .icon {
+        opacity: 0.7;
+      }
+    }
+
+    @media screen and ( max-width: 770px ) {
+      display: flex;
+    }
+  }

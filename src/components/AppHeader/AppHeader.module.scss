@@ -1,92 +1,77 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@400;700&display=swap');
 
-.appHeaderWrapper {
+.AppHeaderWrapper {
+  position: sticky;
+  top: 0;
+  width: 100svw;
+  z-index: 1000;
+
   color: inherit;
-  display: flex;
-  padding: 50px 0;
-  justify-content: space-between;
-  align-items: center;
-  align-self: stretch;
+  padding: 45px 0;
 
-  h2 {
-    font-family: "Roboto Serif", serif;
-    font-size: 28px;
-    font-weight: 700;
-  }
-}
-
-.buttons {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-
-  @media screen and ( max-width: 920px ) {
-    gap: 20px;
-  }
-
-  .mobileHamburguerBtn {
-    display: none;
-    cursor: pointer;
-
-    &:hover {
-      .icon {
-        opacity: 0.7;
-      }
-    }
-
-    @media screen and ( max-width: 770px ) {
-      display: flex;
-    }
-  }
-
-  nav {
+  .AppHeaderContainer {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
-    flex: 1;
-    gap: 59px;
+    align-self: stretch;
 
-    @media screen and ( max-width: 920px ) {
-      gap: 32px;
-    }
+    max-width: 80%;
+    margin: 0 auto;
 
-    @media screen and ( max-width: 770px ) {
-      display: none;
-    }
-
-    * {
-      text-align: center;
+    h2 {
       font-family: "Roboto Serif", serif;
-      font-size: 22px;
-      font-weight: 400;
+      font-size: 28px;
+      font-weight: 700;
     }
-
-    a.highlited {
-      border-radius: 5px;
-      border: 1px solid currentColor;
-      padding: 10px 20px;
-    }
-
-    a.highlited:hover {
-      transition: all 0.8s;
-      transform: scale(1.013);
-      text-decoration: none;
-    }
-
-    a:hover {
-      opacity: 0.7;
-      text-decoration: underline;
-      text-underline-offset: 3.2px;
-    }
-  }
-
-  .themeBtn {
-    .icon {
-      transition: color 0.2s ease;
-    }
-
-    &:hover .icon {
-      color: #ecb243;
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+  
+      @media screen and ( max-width: 920px ) {
+        gap: 20px;
+      }
+  
+      nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex: 1;
+        gap: 59px;
+  
+        @media screen and ( max-width: 920px ) {
+          gap: 32px;
+        }
+  
+        @media screen and ( max-width: 770px ) {
+          display: none;
+        }
+  
+        * {
+          text-align: center;
+          font-family: "Roboto Serif", serif;
+          font-size: 22px;
+          font-weight: 400;
+        }
+  
+        a.highlited {
+          border-radius: 5px;
+          border: 1px solid currentColor;
+          padding: 10px 20px;
+        }
+  
+        a.highlited:hover {
+          transition: all 0.8s;
+          transform: scale(1.013);
+          text-decoration: none;
+        }
+  
+        a:hover {
+          opacity: 0.7;
+          text-decoration: underline;
+          text-underline-offset: 3.2px;
+        }
+      }
     }
   }
 }

@@ -1,81 +1,57 @@
-// React
+// react 
 import { useEffect, useState } from "react";
 
-// Icons
-import { HiMenuAlt3 } from "react-icons/hi";
-import { FiMoon } from "react-icons/fi";
-import { FiSun } from "react-icons/fi";
+// components
+import { ThemeToggleButton } from "./ThemeToggleButton";
+import { MobileAppHeaderNav } from "./MobileAppHeaderNav";
 
-// Styles
+// styles
 import styles from "./AppHeader.module.scss";
 
 export function AppHeader() {
-  const [themeBtnStyle, setThemeBtnStyle] = useState<"dark" | "light">("dark");
-
-  function handleChangeTheme(theme: "dark" | "light") {
-    document.body.classList.remove("dark", "light");
-    document.body.classList.add(theme);
-  }
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   useEffect(() => {
-    document.body.classList.remove("dark", "light");
-    document.body.classList.add("dark");
+    const checkTheme = () => {
+      setIsDarkTheme(document.body.classList.contains('dark'));
+    };
+
+    // Verifica o tema ao montar
+    checkTheme();
+
+    // Observa mudanças na class do <body>
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.body, { attributes: true, attributeFilter: ["class"] });
+
+    return () => observer.disconnect(); // limpa ao desmontar
   }, []);
 
   return (
-    <header className={styles.appHeaderWrapper}>
-      {/* Title */}
-      <h2>
-        <a href="#home">edu.&lt;/&gt;</a>
-      </h2>
+    <header 
+      className={styles.AppHeaderWrapper} 
+      style={{ backgroundColor: isDarkTheme ? 'black' : 'white' }}
+    >
+      <div className={styles.AppHeaderContainer}>
+        {/* Title */}
+        <h2>
+          <a href="#home">edu.&lt;/&gt;</a>
+        </h2>
 
-      {/* Nav */}
-      <div className={styles.buttons}>
-        
-        {/* desktop / tablet nav
-        */}
-        <nav>
-          <a href="#home">
-            <span>Home</span>
-          </a>
-          <a href="#projects">
-            <span>Projects</span>
-          </a>
-          <a href="#tech">
-            <span>Tech</span>
-          </a>
-          <a href="#hire-me" className={styles.highlited}>
-            <span>Hire me!</span>
-          </a>
-        </nav>
+        {/* Nav */}
+        <div className={styles.buttons}>
+          <nav>
+            <a href="#home"><span>Home</span></a>
+            <a href="#projects"><span>Projects</span></a>
+            <a href="#tech"><span>Tech</span></a>
+            <a href="#hire-me" className={styles.highlited}><span>Hire me!</span></a>
+          </nav>
 
-        {/* Theme Toggle Button */}
-        <button
-          className={styles.themeBtn}
-          onClick={() => {
-            setThemeBtnStyle((prev) => {
-              const newTheme = prev === "dark" ? "light" : "dark";
-              handleChangeTheme(newTheme);
-              return newTheme;
-            });
-          }}
-        >
-          {themeBtnStyle === "dark" ? (
-            <FiSun className={styles.icon} size="28px" color="#fff" />
-          ) : (
-            <FiMoon className={styles.icon} size="28px" color="#000" />
-          )}
-        </button>
+          {/* Theme Toggle Button */}
+          <ThemeToggleButton />
 
-        {/* mobile nav - burger icon
-        */}
-        <button className={styles.mobileHamburguerBtn}>
-          <HiMenuAlt3
-            className={styles.icon}
-            color="#fff"
-            size="32px"
-          />
-        </button>
+          {/* Mobile Nav */}
+          <MobileAppHeaderNav />
+        </div>
       </div>
     </header>
   );

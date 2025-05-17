@@ -1,23 +1,17 @@
-import { useEffect, useState } from 'react';
+// zustand theme store
+import { useThemeStore } from '@/stores/useThemeStore';
+
+// styles
 import styles from './HeroSection.module.scss';
 
+// hero section component
 export function HeroSection() {
-  // inicia com null ou false, não acessa document ainda
-  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  useEffect(() => {
-    // só aqui tem acesso ao document (cliente)
-    setIsDarkMode(document.body.classList.contains('dark'));
+  // verify if dark mode is enabled
+  const theme = useThemeStore((state) => state.theme);
+  const isDarkMode = theme === "dark";
 
-    const observer = new MutationObserver(() => {
-      setIsDarkMode(document.body.classList.contains('dark'));
-    });
-
-    observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
-
-    return () => observer.disconnect();
-  }, []);
-
+  // invert white from images to be black and black to be white
   const filterStyle = {
     filter: 'invert(1) hue-rotate(180deg)',
     transition: 'filter 0.3s ease',
@@ -28,11 +22,8 @@ export function HeroSection() {
       {/* informations */}
       <section className={styles.heroWrapper}>
         <img 
-          src={
-            isDarkMode 
-              ? '/images/HeroSection/presentationLight.svg'  
-              : '/images/HeroSection/presentationDark.svg'
-          }
+          src={'/images/HeroSection/eduardoPresentation.svg'}
+          style={ isDarkMode ? undefined : filterStyle}
           alt="Presentation" 
         />
         
@@ -42,17 +33,17 @@ export function HeroSection() {
         </p>
       </section>
       
-      {/* aside space shapes */}
+      {/* aside shapes */}
       <img 
         src="/images/HeroSection/shape1.svg" 
         className={`${styles.shape} ${styles.shape1}`}
-        style={!isDarkMode ? filterStyle : undefined}
+        style={isDarkMode ? undefined : filterStyle}
       />
       
       <img 
         src="/images/HeroSection/shape2.svg" 
         className={`${styles.shape} ${styles.shape2}`}
-        style={!isDarkMode ? filterStyle : undefined}
+        style={isDarkMode ? undefined : filterStyle}
       />
     </div>
   );

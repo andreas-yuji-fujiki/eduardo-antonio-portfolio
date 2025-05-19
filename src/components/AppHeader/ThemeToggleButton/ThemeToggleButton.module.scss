@@ -9,6 +9,13 @@
   
     .icon {
       transition: color 0.2s ease;
+      width: 28px;
+      height: 28px;
+
+      @media screen and ( max-width: 350 ) {
+        width: 18px;
+        height: 18px;
+      }
     }
   
     &:hover {

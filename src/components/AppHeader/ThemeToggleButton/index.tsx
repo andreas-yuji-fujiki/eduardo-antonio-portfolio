@@ -18,9 +18,9 @@ export function ThemeToggleButton() {
   return (
     <button className={styles.themeBtn} onClick={toggleTheme}>
       {theme === "dark" ? (
-        <FiSun className={styles.icon} size="28px" color="#fff" />
+        <FiSun className={styles.icon} color="var(--elements-color)" />
       ) : (
-        <FiMoon className={styles.icon} size="28px" color="#000" />
+        <FiMoon className={styles.icon} color="var(--elements-color)" />
       )}
     </button>
   );

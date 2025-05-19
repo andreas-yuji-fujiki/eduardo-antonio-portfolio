@@ -4,6 +4,14 @@
 
     .icon {
         transition: color 0.2s ease;
+
+        width: 32px;
+        height: 32px;
+
+        @media screen and ( max-width: 350px ) {
+          width: 22px;
+          height: 22px;
+        }
     }
 
     &:hover {

@@ -11,8 +11,7 @@ export function MobileAppHeaderNav() {
     <button className={styles.mobileHamburguerBtn}>
       <HiMenuAlt3 
         className={styles.icon} 
-        color="var(--elements-color)" 
-        size="32px" />
+        color="var(--elements-color)" />
     </button>
   );
 }

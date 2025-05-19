@@ -1,0 +1,13 @@
+@mixin fontFaces {
+    /* Organic Relief */
+    @font-face {
+        font-family: 'Organic Relief';
+        src: url('/fonts/OrganicRelief.ttf') format('truetype');
+    }
+
+    /* Organic Relief */
+    @font-face {
+        font-family: 'Sugar Punch';
+        src: url('/fonts/SugarpunchDemo.otf') format('opentype');
+    }
+}  

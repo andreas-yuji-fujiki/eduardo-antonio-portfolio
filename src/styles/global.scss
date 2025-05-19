@@ -1,3 +1,8 @@
+/* Imports
+*/
+  /* fonts (font faces) */
+  @use './fonts';
+
 /* VARIABLES
 */
   :root {
@@ -19,7 +24,7 @@
       --elements-color: #fff;
     }
 
-/* basic reset
+/* Reset
 */
   * {
     margin: 0;
@@ -27,22 +32,19 @@
     box-sizing: border-box;
   }
 
-  html {
-    overflow-x: hidden;
-  }
+
 
   body {
+    height: 300vh;
+    @include fonts.fontFaces;
     background: linear-gradient(180deg, #000 0%, #000 41.44%, #000 100%);
 
     background: var(--background-color);
     color: var(--text-color);
 
     max-width: 100%;
-
-    /* tablets / mobile */
-    @media screen and ( max-width: 920px ) {
-      max-width: 90%;
-    }
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
   /* lists */

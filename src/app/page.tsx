@@ -7,6 +7,9 @@
 
   // styles
   import styles from "./Page.module.scss";
+import { CustomButton } from "@/components/Global/CustomButton";
+import { FaHome } from "react-icons/fa";
+import { AiFillCheckCircle } from "react-icons/ai";
 
 export default function Home( ) {
   return (

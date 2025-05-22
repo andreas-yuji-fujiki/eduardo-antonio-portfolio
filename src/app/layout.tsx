@@ -3,12 +3,18 @@
   import type { Metadata } from "next";
 
   // fonts
-  import { Roboto_Slab, Roboto, Roboto_Serif } from 'next/font/google';
+  import { Roboto_Slab, Roboto, Roboto_Serif, Inter } from 'next/font/google';
 
   // global styles
   import "@/styles/global.scss";
 
 // fonts config
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter', // opcional, se quiser usar como CSS variable
+});
+
 const robotoSlab = Roboto_Slab({
   subsets: ['latin'],
   weight: ['100', '200', '300', '400', '500', '700', '900'],
@@ -43,7 +49,8 @@ export default function RootLayout({
         className={
           `${robotoSlab.className} 
           ${roboto.className} 
-          ${robotoSerif.className}`}>
+          ${robotoSerif.className}
+          ${inter.className}`}>
         {children}
       </body>
     </html>

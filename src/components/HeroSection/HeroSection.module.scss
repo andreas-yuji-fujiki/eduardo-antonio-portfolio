@@ -38,7 +38,11 @@
 
 /* Titles */
 .presentationTitle {
-  font-size: 4.1dvw;
+  font-size: 3.60dvw;
+
+  @media screen and (max-width: 1285px) {
+    font-size: 4.1dvw;
+  }
 
   @media screen and (max-width: 1024px) {
     font-size: 6.6dvw;
@@ -72,7 +76,7 @@
   color: var(--text-color);
   text-align: center;
   font-family: "Roboto Serif";
-  font-size: 2dvw;
+  font-size: 1.6dvw;
   font-weight: 400;
 
   @media screen and (max-width: 1024px) {
@@ -99,6 +103,16 @@
   @media screen and (max-width: 350px) {
     margin-top: -20px;
   }
+}
+
+.SocialButtonsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 3rem 0 2rem 0;
+  gap: 1.5rem;
 }
 
 .shapesContainer {

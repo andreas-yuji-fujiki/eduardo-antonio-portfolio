@@ -1,6 +1,7 @@
 // components
 import { ThemeToggleButton } from "./ThemeToggleButton";
 import { MobileAppHeaderNav } from "./MobileAppHeaderNav";
+import { CustomButton } from '../Global/CustomButton/'
 
 // styles
 import styles from "./AppHeader.module.scss";
@@ -25,7 +26,7 @@ export function AppHeader() {
             <a href="#home"><span>Home</span></a>
             <a href="#projects"><span>Projects</span></a>
             <a href="#tech"><span>Tech</span></a>
-            <a href="#hire-me" className={styles.highlited}><span>Hire me!</span></a>
+            <CustomButton variant="transparent">Hire Me!</CustomButton>
           </nav>
 
           {/* Theme Toggle Button */}

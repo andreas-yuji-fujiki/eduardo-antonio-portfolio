@@ -1,16 +1,54 @@
 .CustomButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    text-align: center;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: 1px solid var(--elements-color);
+
+    color: var(--text-color);
+
+    transition: all 0.4s;
+    transform: scale(1);
+
+    &:hover {
+        transform: scale(1.013);
+    }
 }
 
 .default {
+    filter: invert(1);
+    background-color: var(--background-color);
 } 
 
 .transparent {
+    background-color: transparent;
 }
 
 .justIcon {
+    border: none;
+    background-color: transparent;
 
-} 
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+.iconContainer {
+    *{
+        width: 2rem;
+        height: 2rem;
+    }
+}
 
 .highlighted {
-
+    background-color: #346259;
 }

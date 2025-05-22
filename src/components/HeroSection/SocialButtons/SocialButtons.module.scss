@@ -1,0 +1,9 @@
+.SocialButtonsList{
+    ul {
+        display: flex;
+        gap: 1.5rem;
+    }
+    * {
+        color: var(--elements-color);
+    }
+}

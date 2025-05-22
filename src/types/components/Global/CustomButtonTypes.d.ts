@@ -7,5 +7,5 @@ export interface CustomButtonTypes extends ButtonHTMLAttributes<HTMLButtonElemen
   bgColor?: string;
   icon?: ReactElement;
   iconColor?: string;
-  children: ReactNode;
+  children?: ReactNode;
 }

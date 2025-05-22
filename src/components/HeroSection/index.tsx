@@ -1,8 +1,17 @@
-// zustand theme store
-import { useThemeStore } from '@/stores/useThemeStore';
+/* Imports
+*/
+  // components
+  import { CustomButton } from '../Global/CustomButton';
+  import { SocialButtons } from './SocialButtons';
 
-// styles
-import styles from './HeroSection.module.scss';
+  // zustand theme store
+  import { useThemeStore } from '@/stores/useThemeStore';
+
+  // icons
+  import { FaGithub } from "react-icons/fa";
+
+  // styles
+  import styles from './HeroSection.module.scss';
 
 // hero section component
 export function HeroSection() {
@@ -44,10 +53,17 @@ export function HeroSection() {
             ongoing software engineer!
           </p>
         </section>
+
+        <div className={styles.SocialButtonsContainer}>
+          <CustomButton variant='default' icon={<FaGithub/>} >
+            Take a look at Github
+          </CustomButton>
+          <SocialButtons ghVisible={false}/>
+        </div>
       </div>
+
       {/* aside shapes */}
       <div className={styles.shapesContainer}>
-
         <div className={styles.shapeImageWrapper}>
           <img
             src="/images/HeroSection/shape1.svg"

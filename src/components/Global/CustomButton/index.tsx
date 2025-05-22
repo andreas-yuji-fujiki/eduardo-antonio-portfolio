@@ -37,7 +37,11 @@ export function CustomButton({
             )}
 
             {/* inside elements */}
-            { !variantIsJustIcon && children }
+            { !variantIsJustIcon && (
+                <span className={styles.childrenContainer}>
+                    { children }
+                </span>
+            ) }
         </button>
     );
 }

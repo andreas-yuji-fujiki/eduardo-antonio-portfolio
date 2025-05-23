@@ -39,6 +39,8 @@
 /* Titles */
 .presentationTitle {
   font-size: 3.60dvw;
+  transition: all 0.4s;
+  cursor: default;
 
   @media screen and (max-width: 1285px) {
     font-size: 4.1dvw;
@@ -73,6 +75,9 @@
 
 /* Description Paragraphs */
 .descriptionParagraph {
+  transition: all 0.4s;
+  cursor: default;
+
   color: var(--text-color);
   text-align: center;
   font-family: "Roboto Serif";
@@ -126,6 +131,8 @@
   .shapeImageWrapper {
 
     .shape {
+      pointer-events: none;
+
       position: absolute;
       z-index: 1;
     

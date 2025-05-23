@@ -22,7 +22,7 @@ export function HeroSection() {
   // invert white from images to be black and black to be white
   const filterStyle = {
     filter: 'invert(1) hue-rotate(180deg)',
-    transition: 'filter 0.5s ease',
+    transition: 'all 0.4s ease',
   };
 
   return (

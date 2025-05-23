@@ -8,9 +8,14 @@
     justify-content: center;
   
     .icon {
-      transition: color 0.2s ease;
+      transform: rotate(0);
       width: 28px;
       height: 28px;
+
+      * {
+        transition: all 0.4s;
+        transform: rotate(0);
+      }
 
       @media screen and ( max-width: 350 ) {
         width: 18px;
@@ -20,8 +25,6 @@
   
     &:hover {
       .icon *{
-        
-        transform: scale(0.98);
         color: var(--theme-toggle-button-hover-color);
       }
     }
